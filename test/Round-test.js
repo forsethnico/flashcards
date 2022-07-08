@@ -39,6 +39,8 @@ describe('Round', () => {
     it('should have a method to increase turn count each turn', () => {
       round.takeTurn('guess');
       expect(round.turns).to.equal(1);
+      round.takeTurn('sea otter');
+      expect(round.turns).to.equal(2);
     });
 
     it('should store incorrect guesses by ID as an array', () => {
