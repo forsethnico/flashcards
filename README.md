@@ -1,12 +1,12 @@
 # FlashCards
 
 ## Abstract
-This is an application that simulates a set of flash cards through the command line. A user will be able to see the a deck of 30 different questions about array prototype methods, make guesses, and see a final score at the end of the round.
+This is an application that simulates a set of flash cards through the command line. A user will be able to see the deck of 30 different questions (cards) about array prototype methods, make guesses, and see a final score at the end of the round on how well they did!
 
 This project was written by Nicole Forseth - a Module 2 Front End Engineering student at the Turing School of Software and Design. 
 
 ## Working Application
-Users are prompted for each question, have the opportunity to select an answer, and will be given feedback if the guess was correct or incorrect:
+The game starts by typing ```node index.js``` in the terminal. Users are prompted for each question, have the opportunity to select an answer, and will be given feedback if the guess was correct or incorrect:
 
 ![flash cards gif](https://media.giphy.com/media/BDQvRf4ipGRCXFfdIj/giphy.gif)
 
