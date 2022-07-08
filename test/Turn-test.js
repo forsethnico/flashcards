@@ -5,50 +5,44 @@ const Card = require('../src/Card');
 const Turn = require('../src/Turn');
 
 describe('Turn', function() {
+  let turn1, turn2, card1, card2
 
-  it('should be a function', function() {
-    const turn = new Turn();
-    expect(Turn).to.be.a('function');
+  beforeEach(() => {
+      card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+      card2 = new Card(2, 'What is a comma-separated list of related values?', ["array", "object", "function"], 'array');
+      turn1 = new Turn('sea otter', card1);
+      turn2 = new Turn('pug', card1);
   });
 
-  it('should be an instance of Turn', function() {
-    const turn = new Turn();
-    expect(turn).to.be.an.instanceof(Turn);
-  });
+    it('should be a function', function() {
+      expect(Turn).to.be.a('function');
+    });
 
-  it('should store a users guess to question', function() {
-    const turn = new Turn('pug');
-    expect(turn.guess).to.equal('pug')
-  });
+    it('should be an instance of Turn', function() {
+      expect(turn1).to.be.an.instanceof(Turn);
+    });
 
-  it('should store the current card in play', function() {
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const turn = new Turn('pug', card);
-    expect(turn.currentCard).to.equal(card)
-  });
+    it('should store a users guess to question', function() {
+      expect(turn1.guess).to.equal('sea otter')
+    });
 
-  it('should return the guess', function() {
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const turn = new Turn('pug', card);
-    expect(turn.returnGuess()).to.equal('pug')
-  });
+    it('should store the current card in play', function() {
+      expect(turn1.currentCard).to.equal(card1)
+    });
 
-  it('should return the card', function() {
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const turn = new Turn('pug', card);
-    expect(turn.returnCard()).to.equal(card)
-  });
+    it('should have a method that returns the guess', function() {
+      expect(turn1.returnGuess()).to.equal('sea otter')
+    });
 
-  it('should evaluate the guess', function() {
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const turn = new Turn('pug', card);
-    expect(turn.evaluateGuess()).to.equal(false)
-  });
+    it('should have a method that returns the card', function() {
+      expect(turn1.returnCard()).to.equal(card1)
+    });
 
-  it('should give feedback on the result', function() {
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const turn = new Turn('pug', card);
-    expect(turn.giveFeedback()).to.equal('incorrect!')
-  });
-  
+    it('should have a method that evaluates the guess', function() {
+      expect(turn1.evaluateGuess()).to.equal(true)
+    });
+
+    it('should have a method to give feedback on the result', function() {
+      expect(turn1.giveFeedback()).to.equal('correct!')
+    });
 });
