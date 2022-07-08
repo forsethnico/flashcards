@@ -20,6 +20,8 @@ The core learning goal of this project was to practice test driven development (
 
 ## Install/Setup Instructions
 
+The project spec and rubric can be found [here](https://frontend.turing.edu/projects/flash-cards.html).
+
 On the top right corner of this page, click the **Fork** button.
 Clone down the forked repo (from your GitHub) using the command ```git clone [remote-address]```. Once you have cloned the repo, change into the directory and install the library dependencies. Run:```npm install```
 
