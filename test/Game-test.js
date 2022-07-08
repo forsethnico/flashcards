@@ -8,7 +8,7 @@ const data = require('../src/data');
 const prototypeQuestions = data.prototypeData;
 
 describe('Game', function() {
-  let game;
+  let game
 
   beforeEach(() => {
     game = new Game();
@@ -19,7 +19,7 @@ describe('Game', function() {
     });
 
     it('should create new round using the deck of cards', function () {
-      game.start();
+      game.prepareGame();
       const currentDeck = game.currentRound.deck;
       expect(currentDeck[0]).to.be.an.instanceof(Card);
       expect(currentDeck.length).to.equal(30);
