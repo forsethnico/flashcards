@@ -4,7 +4,7 @@ const expect = chai.expect;
 const Card = require('../src/Card');
 const Turn = require('../src/Turn');
 
-describe('Turn', function() {
+describe('Turn', () => {
   let turn1, turn2, card1, card2
 
   beforeEach(() => {
@@ -14,36 +14,36 @@ describe('Turn', function() {
       turn2 = new Turn('pug', card1);
   });
 
-    it('should be a function', function() {
+    it('should be a function', () => {
       expect(Turn).to.be.a('function');
     });
 
-    it('should be an instance of Turn', function() {
+    it('should be an instance of Turn', () => {
       expect(turn1).to.be.an.instanceof(Turn);
     });
 
-    it('should store a users guess to question', function() {
+    it('should store a users guess to question', () => {
       expect(turn1.guess).to.equal('sea otter')
     });
 
-    it('should store the current card in play', function() {
+    it('should store the current card in play', () => {
       expect(turn1.currentCard).to.equal(card1)
     });
 
-    it('should have a method that returns the guess', function() {
+    it('should have a method that returns the guess', () => {
       expect(turn1.returnGuess()).to.equal('sea otter')
     });
 
-    it('should have a method that returns the card', function() {
+    it('should have a method that returns the card', () => {
       expect(turn1.returnCard()).to.equal(card1)
     });
 
-    it('should have a method that evaluates the guess', function() {
+    it('should have a method that evaluates the guess', () => {
       expect(turn1.evaluateGuess()).to.equal(true)
       expect(turn2.evaluateGuess()).to.equal(false)
     });
 
-    it('should have a method to give feedback on the result', function() {
+    it('should have a method to give feedback on the result', () => {
       expect(turn1.giveFeedback()).to.equal('correct!')
       expect(turn2.giveFeedback()).to.equal('incorrect!')
     });
