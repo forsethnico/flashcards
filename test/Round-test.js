@@ -49,7 +49,7 @@ describe('Round', function() {
     it('should evaluate a correct guess', function() {
       expect(round.takeTurn('sea otter')).to.equal('correct!')
       expect(round.incorrectGuesses).to.deep.equal([]);
-    })
+    });
 
     it('should make the next card the new current card', function (){
       round.takeTurn('sea otter')

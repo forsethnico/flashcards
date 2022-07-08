@@ -8,16 +8,16 @@ const util = require('./util');
 class Game {
   constructor() {
     this.currentRound = null;
-  }
+  };
 
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
-  }
+  };
 
   printQuestion(round) {
       util.main(round);
-  }
+  };
 
   start() {
     const data = prototypeQuestions;
@@ -29,7 +29,7 @@ class Game {
     this.currentRound = round;
     this.printMessage(deck, this.currentRound)
     this.printQuestion(this.currentRound)
-  }
-}
+  };
+};
 
 module.exports = Game;

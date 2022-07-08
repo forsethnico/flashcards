@@ -18,13 +18,11 @@ describe('Game', function() {
       expect(game.currentRound).to.equal(null);
     });
 
-    it('should create new round using the deck', function () {
+    it('should create new round using the deck of cards', function () {
       game.start();
       const currentDeck = game.currentRound.deck;
-      
-      expect(currentDeck.cards[0]).to.be.an.instanceof(Card);
-      expect(currentDeck).to.be.an.instanceof(Deck);
-      expect(currentDeck.cards.length).to.equal(30);
-      expect(currentDeck.cards).to.deep.equal(prototypeQuestions);
+      expect(currentDeck[0]).to.be.an.instanceof(Card);
+      expect(currentDeck.length).to.equal(30);
+      expect(currentDeck).to.deep.equal(prototypeQuestions);
     });
 });
