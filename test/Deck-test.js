@@ -4,7 +4,7 @@ const expect = chai.expect;
 const Deck = require('../src/Deck');
 const Card = require('../src/Card');
 
-describe('Deck', function() {
+describe('Deck', () => {
   let card1, card2, card3, deck
 
   beforeEach(() => {
@@ -14,11 +14,11 @@ describe('Deck', function() {
     deck = new Deck([card1, card2, card3]);
   });
 
-  it('should store an array of cards', function() {
+  it('should store an array of cards', () => {
     expect(deck.cards).to.deep.equal([card1, card2, card3])
   });
 
-  it('should know how many cards are in the deck', function() {
+  it('should know how many cards are in the deck', () => {
     expect(deck.countCards()).to.equal(3);
   });
 });
